@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo target vs currentTarget y Capturing</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f0f0f0;
+    }
+    .contenedor {
+      padding: 50px;
+      background-color: #3498db;
+      border-radius: 10px;
+      color: white;
+      text-align: center;
+    }
+    .boton {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      background-color: white;
+      color: #3498db;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contenedor" id="contenedor">
+    <h2>Haz clic en el botón</h2>
+    <button class="boton">Click aquí</button>
+  </div>
+
+  <script src="../dynamics/js/bubbling.js"></script>
+</body>
+</html>
