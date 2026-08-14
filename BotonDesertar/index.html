@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Esta etiqueta es clave para que se vea bien en celulares -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botón de Desertar</title>
+    <style>
+        /* Estilos generales de la página */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222; /* Fondo oscuro para que resalte el botón */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Estilos del botón circular */
+        #boton-desertar {
+            width: 85vw; /* 85% del ancho de la pantalla del celular */
+            height: 85vw;
+            max-width: 320px; /* Tamaño máximo para que no se vea gigante en PC */
+            max-height: 320px;
+            border-radius: 50%; /* Esto lo hace un círculo perfecto */
+            border: none;
+            cursor: pointer;
+            font-weight: 900;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            transition: all 0.3s ease; /* Transición suave de colores */
+            
+            /* Centrar el texto dentro del botón */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+
+            /* Vista 1: Amarillo por defecto */
+            background-color: #FFD700;
+            color: #000000;
+        }
+
+        /* Efecto al presionar el botón */
+        #boton-desertar:active {
+            transform: scale(0.95);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <button id="boton-desertar">Desertar</button>
+
+    <script>
+        // Obtenemos el botón de nuestro HTML
+        const boton = document.getElementById('boton-desertar');
+        let contadorVistas = 0;
+
+        // Le decimos qué hacer cuando lo toquen/hagan clic
+        boton.addEventListener('click', () => {
+            contadorVistas++;
+
+            if (contadorVistas === 1) {
+                // Vista 2: Café
+                boton.textContent = '¿Seguro que quieres desertar?';
+                boton.style.backgroundColor = '#6D4C41'; // Color café
+                boton.style.color = '#FFFFFF'; // Letra blanca
+                boton.style.fontSize = '1.2rem'; // Letra un poco más chica para que quepa bien
+            } 
+            else if (contadorVistas === 2) {
+                // Vista 3: Rojo
+                boton.textContent = '!!¿SEGURO QUE VAS A DESERTAR?!!';
+                boton.style.backgroundColor = '#D32F2F'; // Color rojo
+                boton.style.color = '#FFFFFF'; // Letra blanca
+                boton.style.fontSize = '1.3rem'; 
+            } 
+            else {
+                // Reiniciar a la Vista 1: Amarillo (por si quieres volver a jugar)
+                contadorVistas = 0;
+                boton.textContent = 'Desertar';
+                boton.style.backgroundColor = '#FFD700'; // Color amarillo
+                boton.style.color = '#000000'; // Letra negra
+                boton.style.fontSize = '1.4rem';
+            }
+        });
+    </script>
+</body>
+</html>
